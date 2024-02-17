@@ -2,12 +2,31 @@ package cz.czechitas.lekce5.model;
 
 import java.util.Objects;
 
-public class Osoba {
+public class Osoba extends Adresa{
     private String jmeno;
     private String prijmeni;
     private String rodneCislo;
-
     private Telefon telefon;
+    private String soukromyEmail;
+    private String pracovniEmail;
+
+    public Osoba(String ulice, String castObce, String obec, String psc) {
+        super(ulice, castObce, obec, psc);
+    }
+
+    public String getPracovniEmail() {
+        return pracovniEmail;
+    }
+    public void setPracovniEmail(String pracovniEmail) {
+        this.pracovniEmail = pracovniEmail;
+    }
+
+    public String getSoukromyEmail() {
+        return soukromyEmail;
+    }
+    public void setSoukromyEmail(String soukromyEmail) {
+        this.soukromyEmail = soukromyEmail;
+    }
 
     public String getJmeno() {
         return jmeno;
@@ -25,7 +44,6 @@ public class Osoba {
     public String getPrijmeni() {
         return prijmeni;
     }
-
     public void setPrijmeni(String prijmeni) {
         Objects.requireNonNull(prijmeni);
         if (prijmeni.isBlank()) {
@@ -38,7 +56,6 @@ public class Osoba {
     public String getRodneCislo() {
         return rodneCislo;
     }
-
     public void setRodneCislo(String rodneCislo) {
         Objects.requireNonNull(rodneCislo);
         if (rodneCislo.isBlank()) {
@@ -55,7 +72,6 @@ public class Osoba {
     public Telefon getTelefon() {
         return telefon;
     }
-
     public void setTelefon(Telefon telefon) {
         this.telefon = telefon;
     }
@@ -63,5 +79,5 @@ public class Osoba {
     public String toString() {
         return jmeno + " " + prijmeni + " (" + rodneCislo + ")";
     }
-}
 
+}
